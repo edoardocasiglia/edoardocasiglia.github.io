@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nome Cognome — Portfolio</title>
+  <meta name="description" content="Portfolio di Nome Cognome: CV, pubblicazioni, libri e link esterni." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <!-- Header -->
+    <header class="hero" role="banner">
+      <h1 class="title">Nome Cognome</h1>
+      <p class="subtitle">
+        Breve descrizione su di te: cosa fai, su cosa stai lavorando, i tuoi interessi.
+        Tono sintetico e amichevole, massimo 2–3 righe.
+      </p>
+    </header>
+
+    <!-- Cards / Links -->
+    <section class="links" aria-label="Sezione collegamenti rapidi">
+      <a class="card" href="cv.pdf" download>
+        <span class="icon" aria-hidden="true">
+          <!-- Download Icon -->
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 3a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4.007 4.007a1.5 1.5 0 0 1-2.1 0L6.586 11.707a1 1 0 1 1 1.414-1.414L10.293 12.586V4a1 1 0 0 1 1-1zM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"/></svg>
+        </span>
+        <div class="card-body">
+          <h2 class="card-title">Scarica il CV</h2>
+          <p class="card-text">PDF aggiornato con esperienze, competenze e contatti.</p>
+        </div>
+      </a>
+
+      <a class="card" href="pubblicazioni.html">
+        <span class="icon" aria-hidden="true">
+          <!-- Publications Icon -->
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6 4a2 2 0 0 0-2 2v12.5a1.5 1.5 0 0 0 2.384 1.23L9 18.5l2.616 1.23a1.5 1.5 0 0 0 1.268 0L15.5 18.5l2.616 1.23A1.5 1.5 0 0 0 20.5 18.5V6a2 2 0 0 0-2-2H6zm12 2v11.882l-1.616-.761a1.5 1.5 0 0 0-1.268 0L12.5 18l-2.616-1.879a1.5 1.5 0 0 0-1.268 0L7 18.118V6h11z"/></svg>
+        </span>
+        <div class="card-body">
+          <h2 class="card-title">Pubblicazioni</h2>
+          <p class="card-text">Articoli, paper e talk con abstract e link.</p>
+        </div>
+      </a>
+
+      <a class="card" href="libri.html">
+        <span class="icon" aria-hidden="true">
+          <!-- Books Icon -->
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M5 4h9a3 3 0 0 1 3 3v12a2 2 0 0 1-2-2H7a2 2 0 0 0-2 2V6a2 2 0 0 1 2-2zm2 3h7v2H7V7zm0 4h7v2H7v-2zm0 4h7v2H7v-2zM18 4a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.748.434L18 19.382V4z"/></svg>
+        </span>
+        <div class="card-body">
+          <h2 class="card-title">Libri</h2>
+          <p class="card-text">Monografie, capitoli e contributi editoriali.</p>
+        </div>
+      </a>
+
+      <a class="card" href="https://example.com" target="_blank" rel="noopener">
+        <span class="icon" aria-hidden="true">
+          <!-- External Link Icon -->
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M14 3a1 1 0 1 0 0 2h3.586l-9.293 9.293a1 1 0 0 0 1.414 1.414L19 6.414V10a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1h-6z"/><path d="M5 6a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-3a1 1 0 1 0-2 0v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3a1 1 0 1 0 0-2H5z"/></svg>
+        </span>
+        <div class="card-body">
+          <h2 class="card-title">Link esterni</h2>
+          <p class="card-text">Sito personale, profili e progetti.</p>
+        </div>
+      </a>
+    </section>
+
+    <!-- (Opzionale) Footer -->
+    <footer class="footer">
+      <p>© <span id="year"></span> Nome Cognome — Tutti i diritti riservati</p>
+    </footer>
+  </main>
+
+  <script>
+    // aggiorna anno nel footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
