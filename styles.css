@@ -54,6 +54,28 @@ img, svg { display: block; }
   box-shadow: var(--shadow);
 }
 
+.hero-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* allinea tutto a sinistra */
+  gap: 5rem; /* meno spazio tra titolo e foto */
+}
+
+.profile-pic {
+  width: 100px;   /* puoi regolare la dimensione */
+  height: auto;
+  /*border-radius: 100%; /* se vuoi forma tonda */
+  object-fit: cover;
+}
+
+.qualifiche {
+  font-size: 0.8rem;  /* più piccolo */
+  columns: 2;
+  column-gap: 2rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
 .title{
   margin: 0 0 10px;
   font-size: clamp(2rem, 4vw, 3rem);
@@ -63,9 +85,9 @@ img, svg { display: block; }
 
 .subtitle{
   margin: 0;
-  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  font-size: 0.45rem;
   color: var(--muted);
-  max-width: 72ch;
+  max-width: 100ch;
 }
 
 /* ====== Cards ====== */
@@ -89,7 +111,7 @@ img, svg { display: block; }
   gap: 18px;
   padding: 18px 18px;
   background: var(--panel);
-  border: 1px solid rgba(255,255,255,.08);
+  border: 3px solid rgba(255, 255, 255, 0.98);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
@@ -103,4 +125,115 @@ img, svg { display: block; }
 }
 
 .card:focus-visible{
-  out
+  outline: none;
+  box-shadow: var(--shadow), var(--ring);
+  border-color: var(--brand);
+}
+
+.icon{
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, var(--brand), var(--brand-strong));
+  color: white;
+}
+
+.card-body{ display: grid; gap: 4px; }
+.card-title{
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.card-text{
+  margin: 0;
+  color: var(--muted);
+  font-size: .975rem;
+}
+
+/* ====== Footer ====== */
+.footer{
+  text-align: center;
+  font-size: .95rem;
+  color: var(--muted);
+  margin-top: 36px;
+}
+
+/* ====== Reduced Motion ====== */
+@media (prefers-reduced-motion: reduce){
+  .card{ transition: none; }
+  .card:hover{ transform: none; }
+}
+
+/* ====== Modale ====== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none; /* nascosta di default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--panel);
+  color: var(--ink);
+  padding: 2rem;
+  border-radius: var(--radius);
+  max-width: 700px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+  position: relative;
+  animation: fadeInUp .3s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .2s;
+}
+
+.modal-close:hover {
+  color: var(--brand-strong);
+}
+
+.modal-links {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.modal-links a {
+  color: var(--brand);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.modal-links a:hover {
+  text-decoration: underline;
+}
+
+/* animazione */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
