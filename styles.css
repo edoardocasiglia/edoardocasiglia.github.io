@@ -46,35 +46,46 @@ img, svg { display: block; }
   padding: 40px 20px 64px;
 }
 
-.hero{
-  padding: 32px 24px;
-  background: linear-gradient(180deg, rgba(255,255,255,.04), transparent);
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: calc(var(--radius) + .5rem);
-  box-shadow: var(--shadow);
-}
-
 .hero-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* allinea tutto a sinistra */
-  gap: 5rem; /* meno spazio tra titolo e foto */
+  justify-content: flex-start; /* non space-between */
+  gap: 1rem;
+  flex-wrap: wrap; /* se lo schermo è troppo stretto, la foto andrà sotto */
+}
+
+.title {
+  flex: 1 1 auto; /* consenti al titolo di restringersi */
+  margin: 0;
 }
 
 .profile-pic {
-  width: 100px;   /* puoi regolare la dimensione */
-  height: auto;
-  /*border-radius: 100%; /* se vuoi forma tonda */
+  flex: 0 0 auto;
+  width: 100px;   /* dimensione fissa */
+  height: 100px;
   object-fit: cover;
 }
 
+
 .qualifiche {
-  font-size: 0.8rem;  /* più piccolo */
-  columns: 2;
-  column-gap: 2rem;
-  color: var(--muted);
+  font-size: 0.8rem;
   line-height: 1.4;
+  margin: 1rem 0;
 }
+
+@media (min-width: 768px) {
+  .qualifiche {
+    columns: 2;
+    column-gap: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .qualifiche {
+    columns: 2;
+  }
+}
+
 
 .title{
   margin: 0 0 10px;
