@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nome Cognome — Portfolio</title>
+  <title>Prof. Dr. Edoardo Casiglia</title>
   <meta name="description" content="Portfolio di Nome Cognome: CV, pubblicazioni, libri e link esterni." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -89,29 +89,18 @@
       </a>
 
 
-      <a class="card" href="#" id="openModal">
-        <span class="icon" aria-hidden="true"> ... </span>
+      <a class="card">
+        <span class="icon" aria-hidden="true">
+          <!-- Books Icon -->
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M5 4h9a3 3 0 0 1 3 3v12a2 2 0 0 1-2-2H7a2 2 0 0 0-2 2V6a2 2 0 0 1 2-2zm2 3h7v2H7V7zm0 4h7v2H7v-2zm0 4h7v2H7v-2zM18 4a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.748.434L18 19.382V4z"/></svg>
+        </span>
         <div class="card-body">
-          <h2 class="card-title">Link esterni pertinenti</h2>
+          <h2 class="card-title"></h2>
+          <p class="card-text"></p>
         </div>
       </a>
     
     </section>
-
-    <!-- Modale per i Link Esterni -->
-    <div id="externalModal" class="modal">
-      <div class="modal-content">
-        <button class="modal-close" id="closeModal">&times;</button>
-        <h2>Link esterni</h2>
-        <ul class="modal-links">
-          <li><a href="https://scholar.google.it/citations?hl=it&user=C34e8ocAAAAJ" target="_blank">Google Scholar</a></li>
-          <li><a href="https://orcid.org/0000-0002-0003-3289" target="_blank">ORCID</a></li>
-          <li><a href="https://www.unipd.it" target="_blank">Università di Padova</a></li>
-          <li><a href="https://www.ciics.it" target="_blank">Istituto Franco Granone - CIICS Torino</a></li>
-          <!-- aggiungi altri link -->
-        </ul>
-      </div>
-    </div>
 
     <!-- (Opzionale) Footer -->
     <footer class="footer">
@@ -122,26 +111,6 @@
   <script>
     // aggiorna anno nel footer
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // gestione modale
-    const modal = document.getElementById('externalModal');
-    const openBtn = document.getElementById('openModal');
-    const closeBtn = document.getElementById('closeModal');
-
-    openBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      modal.classList.add('show');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('show');
-    });
-
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('show');
-      }
-    });
   </script>
 </body>
 </html>
